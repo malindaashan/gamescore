@@ -6,7 +6,7 @@ Main Tech stack used - java 17 + spring boot 3.4 + hibernate + gradle
 
 You can simply compile this by using gradle assemble and run as a  jar.
 
-if you are running the as jar file server will run on port 8080.
+if you are running this as jar file server will run on port 8080.
 
 The postman collection can be found in the resources folder.
 
