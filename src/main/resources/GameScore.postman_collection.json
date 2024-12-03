@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "3f7215a5-ce53-4171-a696-348f4cee56eb",
+		"name": "GameScore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2947458",
+		"_collection_link": "https://martian-firefly-376415.postman.co/workspace/Aeturnum~f9a2814f-6230-4dfd-bbe7-3c418108de62/collection/2947458-3f7215a5-ce53-4171-a696-348f4cee56eb?action=share&source=collection_link&creator=2947458"
+	},
+	"item": [
+		{
+			"name": "savescore",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/score",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"score"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "top10",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/score/top10?gameId=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"score",
+						"top10"
+					],
+					"query": [
+						{
+							"key": "gameId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user-highest-score",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/score/top10?gameId=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"score",
+						"top10"
+					],
+					"query": [
+						{
+							"key": "gameId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

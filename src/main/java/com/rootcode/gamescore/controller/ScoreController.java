@@ -1,7 +1,7 @@
 package com.rootcode.gamescore.controller;
 
 import com.rootcode.gamescore.model.ApiResponse;
-import com.rootcode.gamescore.model.UserScoreDto;
+import com.rootcode.gamescore.model.ScoreDto;
 import com.rootcode.gamescore.service.ScoreService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ public class ScoreController {
     ScoreService scoreService;
 
     @PostMapping
-    public ApiResponse saveUserScore(@RequestBody UserScoreDto userScoreDto) {
+    public ApiResponse saveUserScore(@RequestBody ScoreDto userScoreDto) {
         log.info("Entered saveUserScore with userId:{} and gameId:{}", userScoreDto.getUserId(), userScoreDto.getGameId());
         try {
             return new ApiResponse(scoreService.saveScore(userScoreDto));
@@ -29,11 +29,13 @@ public class ScoreController {
     }
     @GetMapping("/top10")
     public ApiResponse getTop10ByGame(@RequestParam Long gameId){
+        log.info("Entered getTop10ByGame gameId:{}",gameId);
         return new ApiResponse(scoreService.getTop10ByGame(gameId));
     }
 
-    @GetMapping("/user")
+    @GetMapping("/user-highest-score")
     public ApiResponse getUserHighestScore(@RequestParam Long userId){
+        log.info("Entered getUserHighestScore userId:{}",userId);
         return new ApiResponse(scoreService.getUserHighestScore(userId));
     }
 }

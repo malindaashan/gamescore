@@ -2,7 +2,7 @@ package com.rootcode.gamescore.service;
 
 import com.rootcode.gamescore.domain.Score;
 import com.rootcode.gamescore.model.MaxScoreDto;
-import com.rootcode.gamescore.model.UserScoreDto;
+import com.rootcode.gamescore.model.ScoreDto;
 import com.rootcode.gamescore.repository.ScoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +21,7 @@ public class ScoreService {
     @Autowired
     GameService gameService;
 
-    public Boolean saveScore(UserScoreDto userScoreDto) throws IllegalArgumentException {
+    public Boolean saveScore(ScoreDto userScoreDto) throws IllegalArgumentException {
         Score score = new Score();
         score.setUser(userService.getUserById(userScoreDto.getUserId()));
         score.setGame(gameService.getByGameId(userScoreDto.getGameId()));
@@ -36,11 +36,11 @@ public class ScoreService {
 
     public List<MaxScoreDto> getUserHighestScore(Long userId) {
 
-         return scoreRepository.findTopScoresByUser(userService.getUserById(userId)).stream()
-                 .map(row -> new MaxScoreDto(
-                ((Number) row[0]).longValue(),  // gameId
-                ((Double) row[1]).doubleValue()   // score
-        ))
+        return scoreRepository.findTopScoresByUser(userService.getUserById(userId)).stream()
+                .map(row -> new MaxScoreDto(
+                        ((Number) row[0]).longValue(),  // gameId
+                        ((Double) row[1]).doubleValue()   // score
+                ))
                 .collect(Collectors.toList());
     }
 }
