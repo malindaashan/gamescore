@@ -4,7 +4,7 @@ This project can be run with as embedded jar file.
 
 Main Tech stack used - java 17 + spring boot 3.4 + hibernate + gradle
 
-You can simply compile this by using gradle assemble and run as a  jar.
+You can simply compile this by using gradle assemble and run as a  jar. Please make sure you change the appropriate database credentials in application.yml
 
 if you are running this as jar file server will run on port 8080.
 
