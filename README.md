@@ -2,7 +2,7 @@
 
 This project can be run with as embedded jar file.
 
-This has used java 17 + spring boot 3.4 + hibernate + gradle
+Main Tech stack used - java 17 + spring boot 3.4 + hibernate + gradle
 
 You can simply compile this by using gradle assemble and run as a  jar.
 
@@ -26,8 +26,10 @@ Request param - gameId (Integer)
 Request param - userId (Integer)
 
 ####  Improve Performances
-And if we are improve the performance we can have an index on score table where userId and gameId is saved.
+And if we are improve the performance we can have an index on score table where userId and gameId is saved. 
+
 Also we can use pagination on api retrievals.
+
 We can implement caching service as an intermediate.
 
 #### Assumptions made
