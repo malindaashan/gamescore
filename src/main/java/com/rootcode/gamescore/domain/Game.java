@@ -6,7 +6,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -17,7 +19,7 @@ public class Game {
     private Long id;
     private String name;
     private String description;
-    @OneToMany(cascade = CascadeType.ALL)
-    @JsonIgnore
-    private List<User> userList;
+
+
+
 }

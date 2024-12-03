@@ -14,9 +14,11 @@ public class Score {
     private Long id;
 
     private Double score;
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    @JsonIgnore
-    private User user;
+    @JoinColumn(name = "game_id", nullable = false)
+    private Game game;
 }
